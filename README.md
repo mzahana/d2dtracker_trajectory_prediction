@@ -5,4 +5,4 @@ A ROS package with nodes that implement real-time drone trajectory predicitons u
 
 **NOTE**
 
-**This repository is part of the D2DTracker work which is submitted to the IROS 2023 conference. The code will be availble once the paper is accepted.**
+**This repository is part of the D2DTracker work which is submitted for publication. The code will be availble once the paper is accepted.**
