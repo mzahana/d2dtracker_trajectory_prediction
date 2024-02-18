@@ -1,0 +1,11 @@
+# Trajectory sampling time in seconds
+dt: 0.03
+
+# Trajectory length in seconds
+traj_time_sec: 10.0
+
+# Trajectory frame reference
+frame_id: "map"
+
+# Path length for  visualization (max number of poses)
+pose_hist_len: 100

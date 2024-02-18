@@ -1,0 +1,32 @@
+# Print debug messages
+debug: false
+
+# Model type. 0: Constant velocity, 1: 3D Dubins paths, 2: Bezier curve
+model_type: 2
+
+# Resampling time of incoming measurements
+resampling_dt: 0.05
+
+# Prediction time step in seconds
+dt: 0.1
+
+# Number of prediction steps. steps*dt = prediction time in seconds
+steps: 5
+
+# Number for measurement to collect before making a prediction
+min_measurement_buffer_size: 5
+
+# Note for Bezier models
+#    max_measurement_buffer_size >= (bezier_deg+1)*3
+max_measurement_buffer_size: 35
+
+# Calculate current speed from measured state (e.g. by KF) (Dubin's model)
+# False: current_speed will be estimated from measured positions
+calc_speed_form_state: false
+
+# True: publish Path ROS msg to visualize collected measurements in RViz
+publish_state_buff: true
+
+# Bezier degree
+bezier_deg: 3
+estimate_velocity: false

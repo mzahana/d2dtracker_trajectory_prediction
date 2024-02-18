@@ -1,6 +1,6 @@
+/*
 MIT License
-
-Copyright (c) 2021 Mohamed Abdelkader Zahana
+Copyright (c) 2021 Mohamed Abdelkader, mohamedashraf123@gmail.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +19,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+*/
+
+
+#ifndef PREDICTION_MODELS_H
+#define PREDICTION_MODELS_H
+
+#include "trajectory_prediction/constant_velocity.h"
+#include "trajectory_prediction/dubin3d_model.h"
+#include "trajectory_prediction/bezier_model.h"
+
+#endif // PREDICTION_MODELS_H

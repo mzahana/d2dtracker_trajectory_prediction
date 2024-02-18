@@ -1,6 +1,7 @@
+/*
 MIT License
 
-Copyright (c) 2021 Mohamed Abdelkader Zahana
+Copyright (c) 2021 Mohamed Abdelkader, mohamedashraf123@gmail.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +20,17 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+*/
+
+#include "trajectory_prediction/traj_predictor.h"
+
+int main(int argc, char** argv) {
+  ros::init(argc,argv,"traj_predictor_node");
+  ros::NodeHandle nh("");
+  ros::NodeHandle nh_private("~");
+
+  TrajectoryPredictor *traj_predictor = new TrajectoryPredictor(nh, nh_private);
+
+  ros::spin();
+  return 0;
+}

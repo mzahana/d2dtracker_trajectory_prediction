@@ -1,0 +1,11 @@
+<launch>
+  <arg name="odom_topic_name" default="mavros/local_position/odom"/>
+  <arg name="output_file_path" default="/home/arrow/shared_volume/data/random.csv"/>
+
+  <node name="odom_to_csv_node" pkg="trajectory_prediction" type="odom_to_csv.py" clear_params="true" output="screen">
+    <param name="debug" value="true"/>
+    <param name="odom_topic_name" value="$(arg odom_topic_name)"/>
+    <param name="output_file_path" value="$(arg output_file_path)"/>
+  </node>
+  
+</launch>

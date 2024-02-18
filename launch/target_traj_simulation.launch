@@ -1,0 +1,13 @@
+<launch>
+  <arg name="ns" default="intruder"/>
+  <arg name="target_odom_topic" default="/target/odom"/>
+
+  <group ns="$(arg ns)">
+    <node name="target_traj_simulation" pkg="trajectory_prediction" type="simulate_target.py" clear_params="true" output="screen">
+        <rosparam file="$(find trajectory_prediction)/config/traj_simulation.yaml"/>
+        <remap from="target/odom" to="$(arg target_odom_topic)"/>
+    </node>
+  </group>
+
+  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find trajectory_prediction)/rviz/traj_simulation.rviz" />
+</launch>

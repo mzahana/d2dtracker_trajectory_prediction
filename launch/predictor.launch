@@ -1,0 +1,25 @@
+<launch>
+  <arg name="ns" default="interceptor"/>
+  <arg name="target_odom_topic" default="/target/odom"/>
+  <arg name="kf_topic" default="kf/tracks"/>
+  <arg name="pose_array_topic" default="drone_detections"/>
+
+  <arg name="simulate_target" default="false"/>
+
+  <group ns="$(arg ns)">
+    <node name="traj_predictor" pkg="trajectory_prediction" type="traj_predictor_node" clear_params="true" output="screen">
+        <rosparam file="$(find trajectory_prediction)/config/predictor.yaml"/>
+        <remap from="target/odom" to="$(arg target_odom_topic)"/>
+        <remap from="kf/tracks" to="$(arg kf_topic)"/>
+        <remap from="target/pose_array" to="$(arg pose_array_topic)"/>
+        
+        <!-- <remap from="traj_predictor/ref_traj" to="traj_predictor/ref_traj"/> -->
+    </node>
+  </group>
+
+  <include if="$(arg simulate_target)" file="$(find trajectory_prediction)/launch/target_traj_simulation.launch">
+    <arg name="ns" value="intruder"/>
+    <arg name="target_odom_topic" value="$(arg target_odom_topic)"/>
+  </include>
+
+</launch>
