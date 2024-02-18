@@ -18,3 +18,4 @@ Clone this package in your `catkin_ws/src` and compile using `catkin build`.
 # Run
 * An example launch file is available in `launch/predictor.launch`
 * We recommend to use the [PX4 autopilot](https://github.com/robotology/osqp-eigen.git) + MAVROS to simulate UAVs in Gazebo and ROS.
+* You can use our implementaiton of [multi-target Kalman filter](https://github.com/mzahana/multi_target_kf.git) to estimate the target's states.
